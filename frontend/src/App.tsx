@@ -26,11 +26,11 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <Flex w='100%' minH='100vh' direction={{base:'column', sm:'row'}} bgColor='#002735'>
+    <Flex w='100%' minH='100vh' direction={{base:'column', sm:'row'}} bgColor='#002735' overflow="hidden">
 
       <SideBar />
 
-      <Flex w='100%' minH='100vh' direction='column' p='4%' gap={8}>
+      <Flex w='100%' minH='100vh' direction='column' p='3%' gap={8}>
       {
         clientId 
           ? <>

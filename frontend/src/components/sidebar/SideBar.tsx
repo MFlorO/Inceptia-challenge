@@ -40,7 +40,7 @@ const SideBar = () => {
   }, [token])
 
   return (
-    <Flex w='280px' h={{base:'50px', sm:'100vh'}}>
+    <Flex w={isOpen ? '280px' : '20px'} h={{base:'50px', sm:'100vh'}}>
       
       {/* SLIDER MOBILE */}
       <Flex w='100vw' display={{base:'flex', sm:'none'}} alignItems='center' p='1%' gap={2}>

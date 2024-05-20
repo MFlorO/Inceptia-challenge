@@ -8,7 +8,7 @@ const RangeDateFilter = () => {
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
   const { clientId }  =  useClientContext()
-  const { onChangeDetails }  =  useDetailsContext()
+  const { onChangeDetails, onChangeDetailsLength }  =  useDetailsContext()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,8 +26,8 @@ const RangeDateFilter = () => {
       if (startDate || endDate) {
         const response = await getCasesByDate({ botID: clientId, initialDate: startDate, finalDate: endDate });
         if (response?.status) {
-          console.log('FetchData successful', response?.data);
           onChangeDetails(response?.data?.results)
+          onChangeDetailsLength(response?.data?.count)
         } else {
           console.error('Error in fetchData:', response?.error);
         }
@@ -35,7 +35,7 @@ const RangeDateFilter = () => {
     };
   
     fetchData();
-  }, [startDate, endDate, clientId, onChangeDetails]);
+  }, [startDate, endDate, clientId]);
 
 
   return (
