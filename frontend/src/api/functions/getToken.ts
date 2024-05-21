@@ -1,11 +1,12 @@
+import { EMAIL_USER, PASSWORD_USER } from "../constants";
 import inceptiaApi from "../inceptiaApi";
 
 
 export const getToken = async () => {
   try {
     const response = await inceptiaApi.post('/login/', {
-      email: 'reactdev@iniceptia.ai',
-      password: '4eSBbHqiCTPdBCTj',
+      email: EMAIL_USER,
+      password: PASSWORD_USER,
     });
 
     if (!response) throw new Error(`HTTP - error: ${response}`);
