@@ -1,13 +1,14 @@
 import axios from "axios";
+import { URL_API_INCEPTIA } from "./constants";
 
 const inceptiaApi = axios.create({
-  baseURL: 'https://admindev.inceptia.ai/api/v1'
+  baseURL: URL_API_INCEPTIA
 })
 
-// Interceptor para añadir el token a cada solicitud
+
 inceptiaApi.interceptors.request.use(
     (config) => {
-      const token = localStorage.getItem('token'); // Asumiendo que almacenas el token en localStorage
+      const token = localStorage.getItem('token'); 
       if (token) {
         config.headers['Authorization'] = `JWT ${token}`;
       }

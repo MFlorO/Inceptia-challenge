@@ -13,7 +13,9 @@ const ClientSelect = ({ clients }:Props) => {
   const onHandleClick = (id:number) => onChangeClientId(id)
 
   return clients && 
-  <Flex w='100%' h='100%' direction='column' mt='20px' pl='10px'>
+  <Flex w='100%' h='100%' direction='column'>
+    <Flex w='100%' justifyContent='center' alignItems='center' color='white' textAlign='center' pt='1rem'>CLIENTES</Flex>
+    <Flex w='100%' h='100%' direction='column' mt='20px' pl='10px'> 
     {
       clients?.map( client => (
         <Flex p='4%' key={client?.id} cursor='pointer' bgColor={clientId === client?.id ? '#002735' : 'none'} borderRadius={clientId === client?.id ? '30px 00px 0px 30px' : '0px'}
@@ -25,6 +27,7 @@ const ClientSelect = ({ clients }:Props) => {
         </Flex>
       ))
     }
+    </Flex>
   </Flex>
 }
 

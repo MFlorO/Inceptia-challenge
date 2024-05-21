@@ -43,27 +43,27 @@ const SideBar = () => {
     <Flex w={isOpen ? '280px' : '20px'} h={{base:'50px', sm:'100vh'}}>
       
       {/* SLIDER MOBILE */}
-      <Flex w='100vw' display={{base:'flex', sm:'none'}} alignItems='center' p='1%' gap={2}>
+      <Flex w='100vw' display={{base:'flex', sm:'none'}} alignItems='center' p='1%' pl='5px' gap={2}>
         <GiHamburgerMenu cursor='pointer' onClick={onToggle} color='#7FE8C6'/>
-        <Text color='#7FE8C6' textAlign='center'>CHALLENGER INCEPTIA</Text>
+        <Text w='max-content' color='#7FE8C6' textAlign='center'>CHALLENGER INCEPTIA</Text>
       </Flex>
 
-      <Flex display={{base:'flex', sm:'none'}} top={10} position="absolute" bgColor='#294855' overflow="auto" width={isOpen ? "200px" : "0"} h='98vh' transition="width 0.3s ease-in-out" zIndex={999}>
+      <Flex display={{base:'flex', sm:'none'}} top={10} position="absolute" bgColor='#294855' overflow="auto" width={isOpen ? "200px" : "0"} boxShadow={'rgb(0 0 0 / 43%) 1.95px 1.95px 2.6px'}
+      h='100vh' transition="width 0.3s ease-in-out" zIndex={999}>
         <Flex w='100%' direction='column' display={isOpen ? "flex" : "none"} gap={4}>
-          <Flex w='100%' justifyContent='center' alignItems='center' pt='1rem' color='#7FE8C6' textAlign='center'>CLIENTES</Flex>
           <ClientSelect clients={clients}/>
         </Flex>
       </Flex>
 
       {/* SLIDER DESKTOP */}
-      <Flex display={{base:'none', sm:'flex'}} position="relative" bgColor='#294855' overflow="auto" width={isOpen ? "100%" : "0"} h='100vh' transition="width 0.3s ease-in-out" zIndex={999}>
+      <Flex display={{base:'none', sm:'flex'}} position="relative" bgColor='#294855' overflow="auto" width={isOpen ? "100%" : "0"} boxShadow={'rgb(0 0 0 / 43%) 1.95px 1.95px 2.6px'} h='100vh' transition="width 0.3s ease-in-out" zIndex={999}>
         <Flex w='100%' direction='column' display={isOpen ? "flex" : "none"} gap={4}>
             <Flex w='100%' h='45px' direction='column' alignItems='center' justifyContent='center' borderBottom='1px solid #fff'>
-              {/* <Flex bgImage='/public/logo_inceptia.png' bgRepeat='no-repeat' bgSize='contain' /> */}
+              <Flex bgImage='logo_inceptia' bgRepeat='no-repeat' bgSize='contain' />
               <Text color='#7FE8C6' textAlign='center'>CHALLENGER INCEPTIA</Text>
             </Flex>        
-            <Flex w='100%' justifyContent='center' alignItems='center' bgColor='#002735' color='white' textAlign='center'>CLIENTES</Flex>
-            <ClientSelect clients={clients}/>
+            
+            <ClientSelect clients={clients} />
         </Flex>
       </Flex>
 

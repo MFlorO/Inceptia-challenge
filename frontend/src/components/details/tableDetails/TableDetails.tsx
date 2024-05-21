@@ -25,11 +25,11 @@ const TableDetails = ({ details }:Props) => {
             {
                 details?.map( ({ id, last_updated, case_uuid, phone, case_duration, case_result }) => (
                     <Tr color='white' key={id}>
-                        <Td>{last_updated}</Td>
-                        <Td>{case_uuid}</Td>
-                        <Td>{phone}</Td>
-                        <Td>{case_duration}</Td>
-                        <Td textAlign='center'>{case_result?.name}</Td>
+                        <Td  borderBottom='none'>{last_updated}</Td>
+                        <Td  borderBottom='none'>{case_uuid}</Td>
+                        <Td  borderBottom='none'>{phone}</Td>
+                        <Td  borderBottom='none'>{case_duration}</Td>
+                        <Td  borderBottom='none' textAlign='center'>{case_result?.name}</Td>
                     </Tr>
                 ))
             }

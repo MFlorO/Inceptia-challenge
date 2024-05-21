@@ -33,26 +33,28 @@ const App: React.FC = () => {
       <Flex w='100%' minH='100vh' direction='column' p='3%' gap={8}>
       {
         clientId 
-          ? <>
+        ? <>
             <SearchInput />
 
             <Flex w='100%' h='max-content' direction='column' gap={8}>
-              <Flex w='100%' color='white' alignItems='center' justifyContent='space-between'>
-                <Flex>
+              <Flex w='100%' color='white' alignItems='center' justifyContent='space-between' direction={{base:'column', md:'row'}} gap={{base:5, md:0}}>
+                <Flex order={{base:'2', md:'1'}}>
                   <Text>Detalle</Text>
                 </Flex>
-                <Flex alignItems='center' justifyContent='space-between' gap={4}>
-                  <Text>AÑO</Text>
-                  <Text>MES</Text>
-                  <Text>SEMANA</Text>
+                <Flex alignItems='center' justifyContent='space-between' gap={4} direction={{base:'column', md:'row'}} order={{base:'1', md:'2'}}>
+                  <Flex gap={4}>
+                    <Text>AÑO</Text>
+                    <Text>MES</Text>
+                    <Text>SEMANA</Text>
+                  </Flex>
                   <RangeDateFilter /> 
                 </Flex>
               </Flex>
 
               <Details />
             </Flex>
-            </>
-          : <Text textAlign='center' mt='5rem' color='white'>SELECCIONE UN CLIENTE PARA VER MAS INFORMACION </Text>
+          </>
+        : <Text textAlign='center' mt='5rem' color='white'>SELECCIONE UN CLIENTE PARA VER MAS INFORMACION </Text>
       }
       </Flex>
 
